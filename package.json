@@ -1,0 +1,17 @@
+{
+  "name": "better-array",
+  "version": "0.1.0",
+  "description": "var a = require('better-array'); a([1,2,3]).minus([2,3,4]) // => [1]",
+  "homepage": "https://github.com/janlelis/better-array",
+  "author": {
+    "name": "Jan Lelis",
+    "email": "mail@janlelis.de"
+  },
+	"main": "better-array.js",
+  "keywords": [
+    "array",
+    "enumerable",
+    "operators"
+  ],
+  "license": "MIT"
+}
