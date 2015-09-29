@@ -5,6 +5,7 @@
 * Rename to BetterArray
 * Add new methods: .chain, .or, .unique, .includes, .compact, .times, .count
 * .minus returns unique results
+* Restrict BetterArrays to only objects that are Array.isArray
 
 ## v0.1.0
 

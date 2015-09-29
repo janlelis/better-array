@@ -13,6 +13,9 @@
 
     var BetterArrayPrototype = {
       init: function(array){
+        if(!Array.isArray(array)){
+          throw "BetterArrays can only be initialized with Arrays";
+        }
         this.native = array;
         return this;
       },
