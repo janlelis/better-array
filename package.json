@@ -3,15 +3,30 @@
   "version": "0.1.0",
   "description": "var a = require('better-array'); a([1,2,3]).minus([2,3,4]) // => [1]",
   "homepage": "https://github.com/janlelis/better-array",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/janlelis/yyid.js.git"
+  },
   "author": {
     "name": "Jan Lelis",
-    "email": "mail@janlelis.de"
+    "email": "mail@janlelis.de",
+    "url": "http://janlelis.com"
   },
-	"main": "better-array.js",
   "keywords": [
     "array",
     "enumerable",
     "operators"
   ],
+	"main": "better-array.js",
+  "scripts": {
+    "test": "jasmine && karma start"
+  },
+  "devDependencies": {
+    "karma": "^0.13.10",
+    "karma-jasmine": "~0.3",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "jasmine": "~2.3"
+  },
   "license": "MIT"
 }
