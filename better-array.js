@@ -20,7 +20,6 @@
         });
       },
       plus: function(other){
-        // should this return uniq result?
         return this.native.concat(other);
       },
       and: function(other){

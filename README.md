@@ -1,29 +1,34 @@
 # better-array for JavaScript [![[npm]](https://img.shields.io/npm/v/better-array.svg)](https://www.npmjs.com/package/better-array)
 
-Optionally improve arrays with some Ruby inspired extras.
+Adds some Ruby-inspired features to Arrays when you need it.
 
-Or via npm:
+Use the script file directly, or install via npm:
 
     $ npm install better-array
 
-## Usage
+## Usage (Node Style)
+
+Transform an Array into a "BetterArray" object like this:
 
 ```javascript
-var a = require('better-array')
+var BetterArray = require('better-array')
 
 console.log(
-  a([1,2,3]).minus([2,3,4])
+  BetterArray([1,2,3]).minus([2,3,4])
 ); // => [1]
 ```
 
-## Documentation
+The resulting object provides an alternative API to work with the Array:
 
-Included:
+## Methods
 
-* `.minus`
-* `.plus`
-* `.and`
+Method | Parameters | Result | Description
+-------|------------|--------|------------
+`.minus` | Array | Array | Returns an array with unique values and all elements of the other array removed
+`.plus` | Array | Array | Returns a concatenated array
+`.and` | Array | Array | Returns the intersection: Keep only values which can be found in both arrays
 
+Please note that the result is a normal Array, not a BetterArray, so chaining BetterArray methods is not possible.
 
 ## MIT License
 
