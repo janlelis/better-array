@@ -55,6 +55,14 @@
         });
       },
 
+      times: function(integer){
+        var res = []
+        for(var i = 0; i < integer; i++){
+          res = res.concat(this.native);
+        }
+        return res;
+      },
+
       // delegators?
 
       reduce: function(cur, acc){ return this.native.reduce(cur, acc); },

@@ -33,6 +33,7 @@ Method | Parameters | Result | Description
 `.unique` | | Array | Returns array with no double entries
 `.includes` | Element | Boolean | Checks if the element is part of the array
 `.compact` | Array | Array | Removes all `null` and `undefined` values from the array. Note that this is different from underscore's version, which removes all falsy values.
+`.times` | Integer | Array | Repeats the array N times
 
 Please note that the result is a normal Array, not a BetterArray. You can use the `chain` method to do more calls in a row.
 

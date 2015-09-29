@@ -52,4 +52,10 @@ describe('BetterArray', function() {
     });
   });
 
+  describe('#times', function() {
+    it("returns array with all null and undefined values removed", function() {
+      expect( ba([2, 3, 4]).times(3) ).toEqual([2, 3, 4, 2, 3, 4, 2, 3, 4]);
+    });
+  });
+
 });
