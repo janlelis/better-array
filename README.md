@@ -32,8 +32,11 @@ Method | Parameters | Result | Description
 `.or` | Array | Array | Returns a uniqe array out of all elements of both arrays
 `.unique` | | Array | Returns array with no double entries
 `.includes` | Element | Boolean | Checks if the element is part of the array
+`.compact` | Array | Array | Removes all `null` and `undefined` values from the array. Note that this is different from underscore's version, which removes all falsy values.
 
 Please note that the result is a normal Array, not a BetterArray. You can use the `chain` method to do more calls in a row.
+
+Please also note that all methods return a new array, the original array never gets mutated.
 
 ## MIT License
 

@@ -44,9 +44,15 @@
       },
 
       unique: function(){
-        return this.native.filter(function(element, index){
-          return element in this ? false : this[element] = true;
+        return this.native.filter(function(e){
+          return e in this ? false : this[e] = true;
         }, {});
+      },
+
+      compact: function(){
+        return this.native.filter(function(e){
+          return e != null;
+        });
       },
 
       // delegators?

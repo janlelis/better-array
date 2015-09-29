@@ -3,7 +3,7 @@
 ## v0.2.0
 
 * Rename to BetterArray
-* Add new methods: .chain, .or, .unique, .includes
+* Add new methods: .chain, .or, .unique, .includes, .compact
 * .minus returns unique results
 
 ## v0.1.0

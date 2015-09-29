@@ -46,4 +46,10 @@ describe('BetterArray', function() {
     });
   });
 
+  describe('#compact', function() {
+    it("returns array with all null and undefined values removed", function() {
+      expect( ba([2, null, 3, undefined, 4, false]).compact() ).toEqual([2, 3, 4, false]);
+    });
+  });
+
 });
