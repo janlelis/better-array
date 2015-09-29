@@ -63,12 +63,13 @@
         return res;
       },
 
-      // delegators?
-
-      reduce: function(cur, acc){ return this.native.reduce(cur, acc); },
-      reduceRight: function(cur, acc){ return this.native.reduceRight(cur, acc); },
-      every: function(fn){ return this.native.every(fn); }
-      // ...
+      count: function(object){
+        if(arguments.length === 0){
+          return this.native.length;
+        } else {
+          return this.native.filter(function(e){ return e === object }).length;
+        }
+      }
     }
 
     return BetterArray;

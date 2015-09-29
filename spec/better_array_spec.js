@@ -53,8 +53,18 @@ describe('BetterArray', function() {
   });
 
   describe('#times', function() {
-    it("returns array with all null and undefined values removed", function() {
+    it("returns an array N times repeated", function() {
       expect( ba([2, 3, 4]).times(3) ).toEqual([2, 3, 4, 2, 3, 4, 2, 3, 4]);
+    });
+  });
+
+  describe('#count', function() {
+    it("returns array size for no argument", function() {
+      expect( ba([2, 3, 4]).count() ).toEqual(3);
+    });
+
+    it("returns number of === matches for one argument", function() {
+      expect( ba([2, 3, 3, 4]).count(3) ).toEqual(2);
     });
   });
 
