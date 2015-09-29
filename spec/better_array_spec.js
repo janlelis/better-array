@@ -10,8 +10,20 @@ if (typeof(BetterArray) === 'undefined') {
 
 describe('BetterArray', function() {
   describe('#minus', function() {
-    it("is like Ruby's Array#-", function() {
+    it("takes values from array without the ones from the other array", function() {
       expect( ba([2, 3, 4]).minus([3, 4, 5]) ).toEqual([2]);
+    });
+  });
+
+  describe('#plus', function() {
+    it("concatenates two arrays", function() {
+      expect( ba([2, 3, 4]).plus([3, 4, 5]) ).toEqual([2, 3, 4, 3, 4, 5]);
+    });
+  });
+
+  describe('#and', function() {
+    it("returns the intersection", function() {
+      expect( ba([2, 3, 4]).and([3, 4, 5]) ).toEqual([3, 4]);
     });
   });
 
@@ -24,6 +36,13 @@ describe('BetterArray', function() {
   describe('#unique', function() {
     it("returns array with no double entries", function() {
       expect( ba([2, 3, 3, 4]).unique() ).toEqual([2, 3, 4]);
+    });
+  });
+
+  describe('#includes', function() {
+    it("returns array with no double entries", function() {
+      expect( ba([2, 3, 4]).includes(4) ).toEqual(true);
+      expect( ba([2, 3, 4]).includes(5) ).toEqual(false);
     });
   });
 

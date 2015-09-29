@@ -31,6 +31,7 @@ Method | Parameters | Result | Description
 `.and` | Array | Array | Returns the intersection: Keep only values which can be found in both arrays
 `.or` | Array | Array | Returns a uniqe array out of all elements of both arrays
 `.unique` | | Array | Returns array with no double entries
+`.includes` | Element | Boolean | Checks if the element is part of the array
 
 Please note that the result is a normal Array, not a BetterArray. You can use the `chain` method to do more calls in a row.
 
