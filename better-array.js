@@ -12,6 +12,9 @@
         this.native = array;
         return this;
       },
+      chain: function(method){
+        return Object.create(BetterArray).init(this[method].apply(this, Array.prototype.slice.call(arguments, 1)));
+      },
 
       minus: function(other){
         // should this return uniq result?

@@ -28,7 +28,7 @@ Method | Parameters | Result | Description
 `.plus` | Array | Array | Returns a concatenated array
 `.and` | Array | Array | Returns the intersection: Keep only values which can be found in both arrays
 
-Please note that the result is a normal Array, not a BetterArray, so chaining BetterArray methods is not possible.
+Please note that the result is a normal Array, not a BetterArray.
 
 ## MIT License
 
