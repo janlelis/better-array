@@ -1,6 +1,8 @@
-# better-array for JavaScript [![[npm]](https://img.shields.io/npm/v/better-array.svg)](https://www.npmjs.com/package/better-array)
+# BetterArray for JavaScript [![[npm]](https://img.shields.io/npm/v/better-array.svg)](https://www.npmjs.com/package/better-array)
 
-Adds some Ruby-inspired features to Arrays when you need it.
+Adds some Ruby-inspired features to arrays when you need it. It is like an underscore.js only for arrays.
+
+## Setup
 
 Use the script file directly, or install via npm:
 
@@ -8,7 +10,7 @@ Use the script file directly, or install via npm:
 
 ## Usage (Node Style)
 
-Transform an Array into a "BetterArray" object like this:
+Transform an Array into a `BetterArray` object like this:
 
 ```javascript
 var BetterArray = require('better-array')
@@ -18,7 +20,7 @@ console.log(
 ); // => [1]
 ```
 
-The resulting object provides an alternative API to work with the Array:
+The `BetterArray` object provides an alternative API to work with the Array:
 
 ## Methods
 
@@ -28,7 +30,7 @@ Method | Parameters | Result | Description
 `.plus` | Array | Array | Returns a concatenated array
 `.and` | Array | Array | Returns the intersection: Keep only values which can be found in both arrays
 
-Please note that the result is a normal Array, not a BetterArray.
+Please note that the result is a normal Array, not a BetterArray. You can use the `chain` method to do more calls in a row.
 
 ## MIT License
 

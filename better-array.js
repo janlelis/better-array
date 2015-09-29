@@ -4,16 +4,16 @@
   if(typeof exports === 'object'){
     module.exports = code();
   } else{
-    global.betterArray = code();
+    global.BetterArray = code();
   }}(this, function(){
 
-    var BetterArray = {
+    var BetterArrayPrototype = {
       init: function(array){
         this.native = array;
         return this;
       },
       chain: function(method){
-        return Object.create(BetterArray).init(this[method].apply(this, Array.prototype.slice.call(arguments, 1)));
+        return Object.create(BetterArrayPrototype).init(this[method].apply(this, Array.prototype.slice.call(arguments, 1)));
       },
 
       minus: function(other){
@@ -47,6 +47,6 @@
       // ...
     }
 
-    return function betterArray(array){ return Object.create(BetterArray).init(array); }
+    return function BetterArray(array){ return Object.create(BetterArrayPrototype).init(array); }
   })
 );
