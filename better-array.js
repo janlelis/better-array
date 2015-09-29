@@ -7,6 +7,10 @@
     global.BetterArray = code();
   }}(this, function(){
 
+    var BetterArray = function BetterArray(array){
+      return Object.create(BetterArrayPrototype).init(array);
+    }
+
     var BetterArrayPrototype = {
       init: function(array){
         this.native = array;
@@ -17,10 +21,11 @@
       },
 
       minus: function(other){
-        // should this return uniq result?
-        return this.native.filter(function(e){
-          return other.indexOf(e) < 0;
-        });
+        return BetterArray(
+          this.native.filter(function(e){
+            return other.indexOf(e) < 0;
+          })
+        ).unique();
       },
       plus: function(other){
         return this.native.concat(other);
@@ -31,12 +36,17 @@
         });
       },
       or: function(other){
-        // TODO
+        return BetterArray(this.native.concat(other)).unique();
       },
 
-      // non array operations?
       includes: function(element){
         return this.native.indexOf(element) >= 0;
+      },
+
+      unique: function(){
+        return this.native.filter(function(element, index){
+          return element in this ? false : this[element] = true;
+        }, {});
       },
 
       // delegators?
@@ -47,6 +57,6 @@
       // ...
     }
 
-    return function BetterArray(array){ return Object.create(BetterArrayPrototype).init(array); }
+    return BetterArray;
   })
 );

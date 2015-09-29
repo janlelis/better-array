@@ -2,8 +2,9 @@
 
 ## v0.2.0
 
-* New chain method
 * Rename to BetterArray
+* Add new methods: .chain, .or, .unique
+* .minus returns unique results
 
 ## v0.1.0
 
