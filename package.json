@@ -1,7 +1,7 @@
 {
   "name": "better-array",
-  "version": "0.1.2",
-  "description": "var a = require('better-array'); a([1,2,3]).minus([2,3,4]) // => [1]",
+  "version": "0.2.0",
+  "description": "Adds some Ruby-inspired features to arrays when you need it. It is like an underscore.js only for arrays.",
   "homepage": "https://github.com/janlelis/better-array",
   "repository": {
     "type": "git",
@@ -15,7 +15,9 @@
   "keywords": [
     "array",
     "enumerable",
-    "operators"
+    "operators",
+    "ruby",
+    "utils"
   ],
 	"main": "better-array.js",
   "scripts": {
