@@ -1,6 +1,6 @@
 # BetterArray for JavaScript [![[npm]](https://img.shields.io/npm/v/better-array.svg)](https://www.npmjs.com/package/better-array)
 
-Adds some Ruby-inspired features to arrays when you need it. It is like an underscore.js only for arrays.
+Adds some [Ruby-inspired](http://ruby-doc.org/core-2.2.3/Array.html) features to arrays when you need it. It is like an underscore.js only for arrays.
 
 ## Setup
 
