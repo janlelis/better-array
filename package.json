@@ -1,11 +1,11 @@
 {
   "name": "better-array",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "var a = require('better-array'); a([1,2,3]).minus([2,3,4]) // => [1]",
   "homepage": "https://github.com/janlelis/better-array",
   "repository": {
     "type": "git",
-    "url": "git://github.com/janlelis/yyid.js.git"
+    "url": "git://github.com/janlelis/better-array.git"
   },
   "author": {
     "name": "Jan Lelis",
