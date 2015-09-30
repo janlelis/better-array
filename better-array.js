@@ -12,53 +12,53 @@
     }
 
     var BetterArrayPrototype = {
-      init: function(array){
+      init: function init(array){
         if(!Array.isArray(array)){
           throw "BetterArrays can only be initialized with Arrays";
         }
         this.native = array;
         return this;
       },
-      chain: function(method){
+      chain: function chain(method){
         return Object.create(BetterArrayPrototype).init(this[method].apply(this, Array.prototype.slice.call(arguments, 1)));
       },
 
-      minus: function(other){
+      minus: function minus(other){
         return BetterArray(
           this.native.filter(function(e){
             return other.indexOf(e) < 0;
           })
         ).unique();
       },
-      plus: function(other){
+      plus: function plus(other){
         return this.native.concat(other);
       },
-      and: function(other){
+      and: function and(other){
         return this.native.filter(function(e){
           return other.indexOf(e) >= 0;
         });
       },
-      or: function(other){
+      or: function or(other){
         return BetterArray(this.native.concat(other)).unique();
       },
 
-      includes: function(element){
-        return this.native.indexOf(element) >= 0;
-      },
-
-      unique: function(){
+      unique: function unique(){
         return this.native.filter(function(e){
           return e in this ? false : this[e] = true;
         }, {});
       },
 
-      compact: function(){
+      compact: function compact(){
         return this.native.filter(function(e){
           return e != null;
         });
       },
 
-      times: function(integer){
+      includes: function includes(element){
+        return this.native.indexOf(element) >= 0;
+      },
+
+      times: function times(integer){
         var res = []
         for(var i = 0; i < integer; i++){
           res = res.concat(this.native);
@@ -66,15 +66,15 @@
         return res;
       },
 
-      count: function(object){
+      count: function count(object){
         if(arguments.length === 0){
           return this.native.length;
         } else {
           return this.native.filter(function(e){ return e === object }).length;
         }
-      }
+      },
     }
 
     return BetterArray;
-  })
+  });
 );
