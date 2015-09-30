@@ -68,4 +68,132 @@ describe('BetterArray', function() {
     });
   });
 
+  describe('#size', function() {
+    it("returns array size ", function() {
+      expect( ba([2, 3, 4]).size() ).toEqual(3);
+    });
+  });
+
+  describe('#isEmpty', function() {
+    it("returns false for non-empty arrays ", function() {
+      expect( ba([2, 3, 4]).isEmpty() ).toEqual(false);
+    });
+
+    it("returns true for empty arrays ", function() {
+      expect( ba([]).isEmpty() ).toEqual(true);
+    });
+  });
+
+  describe('#grep', function() {
+    it("returns an array of elements matching the (regex) test ", function() {
+      expect( ba(["More", "Micro", "Modules"]).grep(/r/) ).toEqual(["More", "Micro"]);
+    });
+  });
+
+  describe('#zip', function() {
+    it("zips together multilpe arrays", function() {
+      expect(
+        ba([2, 3, 4]).zip([9, 8, 7], ["a", "b", "c"])
+      ).toEqual(
+        [
+          [2, 9, "a"],
+          [3, 8, "b"],
+          [4, 7, "c"]
+        ]
+      );
+    });
+  });
+
+  describe('#clone', function() {
+    it("returns a shallow copy of the array", function() {
+      var object = [2, 3, 4];
+      expect( ba(object).clone() ).toEqual(object);
+    });
+
+    it("returns a different object", function() {
+      var object = [2, 3, 4];
+      expect( ba(object).clone() ).not.toBe(object);
+    });
+  });
+
+
+  describe('#at', function() {
+    it("returns value at that index for one argument", function() {
+      expect( ba([2, 3, 4]).at(1) ).toEqual(3);
+    });
+
+    it("returns values at that indexes for multiple argument", function() {
+      expect( ba([2, 3, 4]).at(0, 2) ).toEqual([2, 4]);
+    });
+  });
+
+  describe('#sliceLength', function() {
+    it("returns a the slice, but 2nd params defines length of slice", function() {
+      expect( ba([2, 3, 4]).sliceLength(1,2) ).toEqual([3, 4]);
+    });
+  });
+
+  describe('#first', function() {
+    it("returns the first value for no argument", function() {
+      expect( ba([2, 3, 4]).first() ).toEqual(2);
+    });
+
+    it("returns the first N values for integer argument", function() {
+      expect( ba([2, 3, 4]).first(2) ).toEqual([2, 3]);
+    });
+  });
+
+  describe('#last', function() {
+    it("returns the last value for no argument", function() {
+      expect( ba([2, 3, 4]).last() ).toEqual(4);
+    });
+
+    it("returns the last N values for integer argument", function() {
+      expect( ba([2, 3, 4]).last(2) ).toEqual([3, 4]);
+    });
+  });
+
+  describe('#take', function() {
+    it("returns the first N values", function() {
+      expect( ba([2, 3, 4]).take(2) ).toEqual([2, 3]);
+    });
+  });
+
+  describe('#drop', function() {
+    it("returns the all of the arrays values, except the first N", function() {
+      expect( ba([2, 3, 4]).drop(2) ).toEqual([4]);
+    });
+  });
+
+  describe('#toArray', function() {
+    it("returns native array", function() {
+      var object = [2, 3, 4];
+      expect( ba(object).toArray() ).toBe(object);
+    });
+  });
+
+
+  describe('#map', function() {
+    it("delegates to native .map", function() {
+      expect(
+        ba([2, 3, 4]).map(function(e){ return e + 1; })
+      ).toEqual([3, 4, 5]);
+    });
+  });
+
+  describe('#each', function() {
+    it("delegates to native .forEach", function() {
+      var res = [];
+      ba([2, 3, 4]).each(function(e, i){ res[i] = e + 1; })
+      expect( res ).toEqual([3, 4, 5]);
+    });
+  });
+
+  describe('#filter', function() {
+    it("delegate to native .filter", function() {
+      expect(
+        ba([2, 3, 4]).filter(function(e){ return e % 2 === 0; })
+      ).toEqual([2, 4]);
+    });
+  });
 });

@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0
+
+* Add .toArray, .size, .isEmpty, .grep, .zip, .at, .sliceLength, .first, .last, .take, .drop, .map, .each, .filter
+
 ## v0.2.0
 
 * Rename to BetterArray

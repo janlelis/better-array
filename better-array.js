@@ -22,6 +22,9 @@
       chain: function chain(method){
         return Object.create(BetterArrayPrototype).init(this[method].apply(this, Array.prototype.slice.call(arguments, 1)));
       },
+      toArray: function toArray(){
+        return this.native;
+      },
 
       minus: function minus(other){
         return BetterArray(
@@ -73,8 +76,77 @@
           return this.native.filter(function(e){ return e === object }).length;
         }
       },
+
+      size: function size(){
+        return this.native.length;
+      },
+
+      isEmpty: function isEmpty(){
+        return this.native.length === 0;
+      },
+
+      clone: function clone(){
+        return this.native.slice();
+      },
+
+      grep: function grep(matcher){
+        return this.native.filter(function(e){
+          return matcher.test(e)
+        });
+      },
+
+      zip: function zip(){
+        var others = Array.prototype.slice.call(arguments);
+        return this.native.map(function(e, i) {
+          var row = others.map(function(f){ return f[i]; });
+          row.unshift(e);
+          return row;
+        });
+      },
+
+      at: function at(index){
+        if(arguments.length === 1){
+          return this.native[index];
+        } else {
+          return Array.prototype.map.call(arguments, function(i){
+            return this.native[i];
+          }.bind(this));
+        }
+      },
+
+      sliceLength: function sliceLength(from, length){
+        return this.native.slice(from, from + length);
+      },
+
+      first: function first(number){
+        if(arguments.length === 0){
+          return this.native[0];
+        } else {
+          return this.native.slice(0, number);
+        }
+      },
+
+      last: function last(number){
+        if(arguments.length === 0){
+          return this.native[this.native.length - 1];
+        } else {
+          return this.native.slice(-number, this.native.length);
+        }
+      },
+
+      take: function take(number){
+        return this.native.slice(0, number);
+      },
+
+      drop: function drop(number){
+        return this.native.slice(number, this.native.length);
+      },
+
+      map:         function map(){         return this.native.map.apply(            this.native, arguments); },
+      each:        function each(){        return this.native.forEach.apply(        this.native, arguments); },
+      filter:      function filter(){      return this.native.filter.apply(         this.native, arguments); },
     }
 
     return BetterArray;
-  });
+  })
 );
