@@ -225,6 +225,18 @@ describe('BetterArray', function() {
     });
   });
 
+  describe('.$reverse', function() {
+    it("delegates to native .reverse", function() {
+      expect( ba([2, 3, 4]).$reverse() ).toEqual([4, 3, 2])
+    });
+
+    it("does mutate the original array", function() {
+      var object = [2, 3, 4];
+      ba(object).$reverse();
+      expect(object).toEqual([4, 3, 2]);
+    });
+  });
+
   describe('.sort', function() {
     it("delegates to native .sort", function() {
       expect( ba([4, 3, 2]).sort() ).toEqual([2, 3, 4])
@@ -234,6 +246,18 @@ describe('BetterArray', function() {
       var object = [4, 3, 2];
       ba(object).sort();
       expect(object).toEqual([4, 3, 2]);
+    });
+  });
+
+  describe('.$sort', function() {
+    it("delegates to native .sort", function() {
+      expect( ba([4, 3, 2]).$sort() ).toEqual([2, 3, 4])
+    });
+
+    it("does mutate the original array", function() {
+      var object = [4, 3, 2];
+      ba(object).$sort();
+      expect(object).toEqual([2, 3, 4]);
     });
   });
 
@@ -276,6 +300,76 @@ describe('BetterArray', function() {
 
     it("returns false if at least one of the elements returns a true value for the test function", function() {
       expect( ba([2, 3, 4]).doesNone(function(e){ return e % 4 == 0; }) ).toEqual(false);
+    });
+  });
+
+  describe('.$pop', function(){
+    it("removes an element from the end of the array", function(){
+      var array = [2, 3, 4];
+      ba(array).$pop();
+      expect( array ).toEqual([2, 3]);
+    });
+
+    it("returns the removed element", function(){
+      var array = [2, 3, 4];
+      expect( ba(array).$pop() ).toEqual(4);
+    });
+  });
+
+  describe('.$push', function(){
+    it("appends an element to the end of the array", function(){
+      var array = [2, 3, 4];
+      ba(array).$push(5);
+      expect( array ).toEqual([2, 3, 4, 5]);
+    });
+
+    it("returns the new array length", function(){
+      var array = [2, 3, 4];
+      expect( ba(array).$push(5) ).toEqual(4);
+    });
+  });
+
+  describe('.$shift', function(){
+    it("removes an element from the beginning of the array", function(){
+      var array = [2, 3, 4];
+      ba(array).$shift();
+      expect( array ).toEqual([3, 4]);
+    });
+
+    it("returns the removed element", function(){
+      var array = [2, 3, 4];
+      expect( ba(array).$shift() ).toEqual(2);
+    });
+  });
+
+  describe('.$unshift', function(){
+    it("appends an element to the beginning of the array", function(){
+      var array = [2, 3, 4];
+      ba(array).$unshift(5);
+      expect( array ).toEqual([5, 2, 3, 4]);
+    });
+
+    it("returns the new array length", function(){
+      var array = [2, 3, 4];
+      expect( ba(array).$unshift(5) ).toEqual(4);
+    });
+  });
+
+  describe('.$splice', function() {
+    it("returns a the slice", function() {
+      expect( ba([2, 3, 4]).$splice(1, 2) ).toEqual([3, 4]);
+    });
+
+    it("removes slice from original array", function() {
+      var array = [2, 3, 4];
+      ba(array).$splice(1, 2);
+      expect( array ).toEqual([2]);
+    });
+
+    it("can be used to add new content to the array", function(){
+      var array = [2, 3, 4];
+      ba(array).$splice(1, 2, 0);
+      expect( array ).toEqual([2, 0]);
     });
   });
 

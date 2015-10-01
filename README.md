@@ -28,13 +28,15 @@ a.count('b'); // => 2
 
 See below for more examples. Please note that the resulting objects are always vanilla JS objects, not BetterArray wrapper objects. This is intentional; the main goal of this library is not the ability to chain, but to be very unobtrusive. If you still want to chain method calls, see at bottom for two options to do so.
 
-## Setup
+## Install
 
-Use the script file directly (via browser global), or get it from npm:
+Use the script file directly (via `BetterArray` browser global), or get it from npm:
 
     $ npm install better-array
 
-## Methods
+## API
+
+All methods that begin with `$` mutate the original array, all the othen ones don't.
 
 Method | Description
 -------|------------
@@ -63,8 +65,6 @@ Method | Description
 `.toArray()` | Returns the underlying array
 `.unique()` | Returns array with no double entries
 `.zip(*arrays)` | Returns the transposed array
-
-Please also note that all methods return a new array, the original array never gets mutated.
 
 ## Chaining
 

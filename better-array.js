@@ -108,6 +108,12 @@
       plus: function plus(other){
         return this.native.concat(other);
       },
+      $pop: function $pop(){
+        return this.native.pop.apply(this.native, arguments);
+      },
+      $push: function $push(){
+        return this.native.push.apply(this.native, arguments);
+      },
       reduce: function reduce(){
         return this.native.reduce.apply(this.native, arguments);
       },
@@ -118,8 +124,14 @@
         var clone = this.native.slice();
         return clone.reverse.apply(clone, arguments);
       },
+      $reverse: function $reverse(){
+        return this.native.reverse.apply(this.native, arguments);
+      },
       size: function size(){
         return this.native.length;
+      },
+      $shift: function $shift(){
+        return this.native.shift.apply(this.native, arguments);
       },
       slice: function slice(){
         return this.native.slice.apply(this.native, arguments);
@@ -130,6 +142,12 @@
       sort: function sort(){
         var clone = this.native.slice();
         return clone.sort.apply(clone, arguments);
+      },
+      $sort: function $sort(){
+        return this.native.sort.apply( this.native, arguments);
+      },
+      $splice: function $splice(){
+        return this.native.splice.apply(this.native, arguments);
       },
       take: function take(number){
         return this.native.slice(0, number);
@@ -148,6 +166,9 @@
         return this.native.filter(function(e){
           return e in this ? false : this[e] = true;
         }, {});
+      },
+      $unshift: function $unshift(){
+        return this.native.unshift.apply(this.native, arguments);
       },
       zip: function zip(){
         var others = Array.prototype.slice.call(arguments);

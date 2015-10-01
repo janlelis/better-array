@@ -4,6 +4,7 @@
 
 * Lots of new methods
 * Introduce chaining
+* Introduce mutating `$` convention
 
 ## v0.2.0
 
