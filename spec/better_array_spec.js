@@ -373,6 +373,41 @@ describe('BetterArray', function() {
     });
   });
 
+  describe('.$clear', function() {
+    it("deletes all content from the array", function() {
+      var array = [2, 3, 4];
+      ba(array).$clear();
+      expect( array ).toEqual([]);
+    });
+  });
+
+  describe('.$insert', function() {
+    it("inserts a new element into the array", function() {
+      var array = [2, 3, 4];
+      ba(array).$insert(1, 2.5);
+      expect( array ).toEqual([2, 2.5, 3, 4]);
+    });
+  });
+
+  describe('.$delete', function() {
+    it("deletes the element at the given index", function() {
+      var array = [2, 3, 4];
+      ba(array).$delete(1);
+      expect( array ).toEqual([2, 4]);
+    });
+
+    it("can delete multiple elements at once", function() {
+      var array = [2, 3, 4];
+      ba(array).$delete(0, 2);
+      expect( array ).toEqual([3]);
+    });
+
+    it("returns the array", function(){
+      var array = [2, 3, 4];
+      expect( ba(array).$delete(0, 2) ).toEqual([3]);
+    });
+  });
+
   describe('[chaining]', function(){
     it("works", function(){
       expect(
