@@ -49,6 +49,15 @@
           return this.native.filter(function(e){ return e === object }).length;
         }
       },
+      doesEvery: function doesEvery(){
+        return this.native.every.apply(this.native, arguments);
+      },
+      doesSome: function doesSome(){
+        return this.native.some.apply(this.native, arguments);
+      },
+      doesNone: function doesNone(fn){
+        return this.native.every.call(this.native, function(e){ return !fn(e); });
+      },
       drop: function drop(number){
         return this.native.slice(number, this.native.length);
       },

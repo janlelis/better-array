@@ -255,4 +255,28 @@ describe('BetterArray', function() {
     });
   });
 
+  describe('#doesSome', function() {
+    it("delegates to native .some", function() {
+      expect( ba([2, 3, 4]).doesSome(function(e){ return e % 5 == 0; }) ).toEqual(false);
+      expect( ba([2, 3, 4]).doesSome(function(e){ return e % 4 == 0; }) ).toEqual(true);
+    });
+  });
+
+  describe('#doesEvery', function() {
+    it("delegates to native .every", function() {
+      expect( ba([2, 3, 4]).doesEvery(function(e){ return e % 2 == 0; }) ).toEqual(false);
+      expect( ba([2, 3, 4]).doesEvery(function(e){ return e % 1 == 0; }) ).toEqual(true);
+    });
+  });
+
+  describe('#doesNone', function() {
+    it("returns true if none of the elements returns a true value for the test function", function() {
+      expect( ba([2, 3, 4]).doesNone(function(e){ return e % 5 == 0; }) ).toEqual(true);
+    });
+
+    it("returns false if at least one of the elements returns a true value for the test function", function() {
+      expect( ba([2, 3, 4]).doesNone(function(e){ return e % 4 == 0; }) ).toEqual(false);
+    });
+  });
+
 });
