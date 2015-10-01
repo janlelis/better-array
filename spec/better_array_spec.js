@@ -279,4 +279,18 @@ describe('BetterArray', function() {
     });
   });
 
+  describe('[chaining]', function(){
+    it("works", function(){
+      expect(
+        ba.chain([2, 3, null, 4]).reverse().compact().toArray()
+      ).toEqual([4, 3, 2]);
+    });
+
+    it("returns an Array for .toArray()", function(){
+      expect(
+        Array.isArray( ba.chain([2, 3, 4]).reverse().toArray() )
+      ).toEqual(true);
+    });
+  });
+
 });

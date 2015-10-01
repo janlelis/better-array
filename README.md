@@ -26,7 +26,7 @@ Or the `count` method:
 a.count('b'); // => 2
 ```
 
-See below for more examples. Please note that the resulting objects are always vanilla JS objects, not BetterArray wrapper objects. This is intentional, the library is not designed for chaining.
+See below for more examples. Please note that the resulting objects are always vanilla JS objects, not BetterArray wrapper objects. This is intentional; the main goal of this library is not the ability to chain, but to be very unobtrusive. If you still want to chain method calls, see at bottom for two options to do so.
 
 ## Setup
 
@@ -66,6 +66,29 @@ Method | Description
 
 Please also note that all methods return a new array, the original array never gets mutated.
 
+## Chaining
+
+If you really want to chain, you can use one these options:
+
+### Using `BetterArray.chain` (more magic)
+
+```javascript
+BetterArray.chain([2,null, 3,4]).reverse().compact().toArray() // => [4, 3, 2]
+```
+
+### Extending the `Array.prototype` yourself (more explicit)
+
+```javascript
+Array.prototype.betterArray = function betterArray(){
+  return BetterArray(this);
+}
+```
+
+Use it like this:
+
+```javascript
+BetterArray([2,null, 3,4]).reverse().betterArray().compact() // => [4, 3, 2]
+```
 
 ## MIT License
 

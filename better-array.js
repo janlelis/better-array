@@ -8,9 +8,6 @@
   }}(this, function(){
 
     var BetterArray = function BetterArray(array){
-      if(!Array.isArray(array)){
-        throw new Error("BetterArrays can only be initialized with Arrays");
-      }
       var newBetterArray = Object.create(BetterArrayPrototype);
       newBetterArray.native = array;
       return newBetterArray;
@@ -30,9 +27,6 @@
             return this.native[i];
           }.bind(this));
         }
-      },
-      chain: function chain(method){
-        return BetterArray(this[method].apply(this, Array.prototype.slice.call(arguments, 1)));
       },
       clone: function clone(){
         return this.native.slice();
@@ -163,6 +157,29 @@
           return row;
         });
       }
+    }
+
+    // Allow some chaining
+
+    var BetterArrayChainPrototype = {};
+
+    for(var functionName in BetterArrayPrototype){
+      (function(){
+        var fn = BetterArrayPrototype[functionName];
+        if(functionName === "toArray"){
+          BetterArrayChainPrototype[functionName] = fn;
+        } else {
+          BetterArrayChainPrototype[functionName] = function chain(){
+            return BetterArray.chain(fn.apply(this, arguments));
+          }
+        }
+      })();
+    }
+
+    BetterArray.chain = function BetterArrayChain(array){
+      var newBetterArrayChain = Object.create(BetterArrayChainPrototype);
+      newBetterArrayChain.native = array;
+      return newBetterArrayChain;
     }
 
     return BetterArray;

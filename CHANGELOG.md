@@ -3,6 +3,7 @@
 ## v0.3.0
 
 * Lots of new methods
+* Introduce chaining
 
 ## v0.2.0
 
