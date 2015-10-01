@@ -39,10 +39,10 @@ describe('BetterArray', function() {
     });
   });
 
-  describe('#includes', function() {
+  describe('#contains', function() {
     it("returns array with no double entries", function() {
-      expect( ba([2, 3, 4]).includes(4) ).toEqual(true);
-      expect( ba([2, 3, 4]).includes(5) ).toEqual(false);
+      expect( ba([2, 3, 4]).contains(4) ).toEqual(true);
+      expect( ba([2, 3, 4]).contains(5) ).toEqual(false);
     });
   });
 

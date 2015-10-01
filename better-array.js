@@ -79,7 +79,7 @@
           return matcher.test(e)
         });
       },
-      includes: function includes(element){
+      contains: function contains(element){
         return this.native.indexOf(element) >= 0;
       },
       indexOf: function indexOf(){

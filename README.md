@@ -49,7 +49,7 @@ Method | Description
 `.first()` | Returns the first element
 `.first(integer)` | Returns an array of the first N elements
 `.grep(matcher)` | Returns a filtered array by calling `matcher.test()` on every element, so you can use it to filter an array of strings using a regex
-`.includes()` | Returns boolean that indicates if the element is part of the array
+`.contains()` | Returns boolean that indicates if the element is part of the array
 `.isEmpty()` | Returns `true` if the array is empty
 `.last()` | Returns the last element
 `.last(integer)` | Returns an array of the last N elements
