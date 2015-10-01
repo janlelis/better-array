@@ -73,6 +73,9 @@
       includes: function includes(element){
         return this.native.indexOf(element) >= 0;
       },
+      indexOf: function indexOf(){
+        return this.native.indexOf.apply(this.native, arguments);
+      },
       isEmpty: function isEmpty(){
         return this.native.length === 0;
       },
@@ -82,6 +85,9 @@
         } else {
           return this.native.slice(-number, this.native.length);
         }
+      },
+      lastIndexOf: function lastIndexOf(){
+        return this.native.lastIndexOf.apply(this.native, arguments);
       },
       map: function map(){ 
         return this.native.map.apply(this.native, arguments);
@@ -99,11 +105,28 @@
       plus: function plus(other){
         return this.native.concat(other);
       },
+      reduce: function reduce(){
+        return this.native.reduce.apply(this.native, arguments);
+      },
+      reduceRight: function reduceRight(){
+        return this.native.reduceRight.apply(this.native, arguments);
+      },
+      reverse: function reverse(){
+        var clone = this.native.slice();
+        return clone.reverse.apply(clone, arguments);
+      },
       size: function size(){
         return this.native.length;
       },
+      slice: function slice(){
+        return this.native.slice.apply(this.native, arguments);
+      },
       sliceLength: function sliceLength(from, length){
         return this.native.slice(from, from + length);
+      },
+      sort: function sort(){
+        var clone = this.native.slice();
+        return clone.sort.apply(clone, arguments);
       },
       take: function take(number){
         return this.native.slice(0, number);

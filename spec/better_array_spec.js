@@ -190,10 +190,69 @@ describe('BetterArray', function() {
   });
 
   describe('#filter', function() {
-    it("delegate to native .filter", function() {
+    it("delegates to native .filter", function() {
       expect(
         ba([2, 3, 4]).filter(function(e){ return e % 2 === 0; })
       ).toEqual([2, 4]);
     });
   });
+
+  describe('#reduce', function() {
+    it("delegates to native .reduce", function() {
+      expect(
+        ba([2, 3, 4]).reduce(function(acc, cur){ return acc - cur; })
+      ).toEqual(-5);
+    });
+  });
+
+  describe('#reduceRight', function() {
+    it("delegates to native .reduceRight", function() {
+      expect(
+        ba([2, 3, 4]).reduceRight(function(acc, cur){ return acc - cur; })
+      ).toEqual(-1);
+    });
+  });
+
+  describe('#reverse', function() {
+    it("delegates to native .reverse", function() {
+      expect( ba([2, 3, 4]).reverse() ).toEqual([4, 3, 2])
+    });
+
+    it("does not mutate the original array", function() {
+      var object = [2, 3, 4];
+      ba(object).reverse();
+      expect(object).toEqual([2, 3, 4]);
+    });
+  });
+
+  describe('#sort', function() {
+    it("delegates to native .sort", function() {
+      expect( ba([4, 3, 2]).sort() ).toEqual([2, 3, 4])
+    });
+
+    it("does not mutate the original array", function() {
+      var object = [4, 3, 2];
+      ba(object).sort();
+      expect(object).toEqual([4, 3, 2]);
+    });
+  });
+
+  describe('#slice', function() {
+    it("returns a the slice, 2nd params defines end index", function() {
+      expect( ba([2, 3, 4]).slice(1,2) ).toEqual([3]);
+    });
+  });
+
+  describe('#indexOf', function() {
+    it("delegates to native .indexOf", function() {
+      expect( ba([2, 3, 3, 4]).indexOf(3) ).toEqual(1);
+    });
+  });
+
+  describe('#lastIndexOf', function() {
+    it("delegates to native .lastIndexOf", function() {
+      expect( ba([2, 3, 3, 4]).indexOf(3) ).toEqual(1);
+    });
+  });
+
 });
