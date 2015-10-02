@@ -90,6 +90,33 @@ Use it like this:
 BetterArray([2,null, 3,4]).reverse().betterArray().compact() // => [4, 3, 2]
 ```
 
+## Wish List
+
+Not implemented, yet:
+
+* xor
+* eachRight
+* mapRight
+* $deleteValue
+* isEqual
+* find
+* findIndex
+* $fill
+* fetch
+* flatten
+* reject
+* sample
+* shuffle
+* $shuffle
+* groupBy
+* eachWindow (each_slice)
+* eachGroupOf (each_cons)
+* eachWithObject
+* cycle
+* min
+* max
+* minmax
+
 ## MIT License
 
 Copyright (C) 2015 Jan Lelis <http://janlelis.com>. Released under the MIT license.
