@@ -142,6 +142,10 @@
         if(arguments.length === 0){ count = 1 }
         return this.native.slice(count, this.native.length).concat(this.native.slice(0, count));
       },
+      $set: function $set(index, element){
+        this.native[index] = element;
+        return this.native;
+      },
       size: function size(){
         return this.native.length;
       },

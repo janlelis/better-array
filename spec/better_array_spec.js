@@ -127,6 +127,16 @@ describe('BetterArray', function() {
     });
   });
 
+  describe('.$set', function() {
+    it("sets the element at this index and returns array", function() {
+      expect( ba([2, 3, 4]).$set(1, "three") ).toEqual([2, "three", 4]);
+    });
+
+    it("returns values at that indexes for multiple argument", function() {
+      expect( ba([2, 3, 4]).at(0, 2) ).toEqual([2, 4]);
+    });
+  });
+
   describe('.sliceLength', function() {
     it("returns a the slice, but 2nd params defines length of slice", function() {
       expect( ba([2, 3, 4]).sliceLength(1,2) ).toEqual([3, 4]);
