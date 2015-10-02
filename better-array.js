@@ -141,6 +141,10 @@
       $reverse: function $reverse(){
         return this.native.reverse.apply(this.native, arguments);
       },
+      rotate: function rotate(count){
+        if(arguments.length === 0){ count = 1 }
+        return this.native.slice(count, this.native.length).concat(this.native.slice(0, count));
+      },
       size: function size(){
         return this.native.length;
       },

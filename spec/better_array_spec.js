@@ -408,6 +408,20 @@ describe('BetterArray', function() {
     });
   });
 
+  describe('.rotate', function() {
+    it("rotates by N", function() {
+      expect( ba([2, 3, 4, 5, 6]).rotate(2) ).toEqual([4, 5, 6, 2, 3]);
+    });
+
+    it("rotates by negative N", function() {
+      expect( ba([2, 3, 4, 5, 6]).rotate(-2) ).toEqual([5, 6, 2, 3, 4]);
+    });
+
+    it("rotates by 1 without argument", function() {
+      expect( ba([2, 3, 4, 5, 6]).rotate(1) ).toEqual([3, 4, 5, 6, 2]);
+    });
+  });
+
   describe('[chaining]', function(){
     it("works", function(){
       expect(
