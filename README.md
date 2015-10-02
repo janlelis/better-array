@@ -47,7 +47,6 @@ Method | Description
 `.compact()` | Returns array with all `null` and `undefined` values removed. Note that this is different from underscore's version, which removes all *falsy* values.
 `.count()` | Returns number of elements. If parameter given, returns how often this object appears(using `===`)
 `.count(object)` | Returns how often this object appears in the array (using `===`)
-`.drop(number)` | Returns an array without the first N elements
 `.first()` | Returns the first element
 `.first(integer)` | Returns an array of the first N elements
 `.grep(matcher)` | Returns a filtered array by calling `matcher.test()` on every element, so you can use it to filter an array of strings using a regex
@@ -60,10 +59,11 @@ Method | Description
 `.plus(array)` | Returns a concatenated array
 `.size()` | Returns the array length
 `.sliceLength(index, length)` | Returns an array slice, but second parameter determines length instead of end position
-`.take(number)` | Returns an array of the first N elements
 `.times(integer)` | Repeats the array N times
 `.toArray()` | Returns the underlying array
 `.unique()` | Returns array with no double entries
+`.withoutFirst(number)` | Returns an array without the first N elements
+`.withoutLast(number)` | Returns an array without the last N elements
 `.zip(*arrays)` | Returns the transposed array
 
 ## Chaining

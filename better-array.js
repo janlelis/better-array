@@ -63,9 +63,6 @@
       doesNone: function doesNone(fn){
         return this.native.every.call(this.native, function(e){ return !fn(e); });
       },
-      drop: function drop(number){
-        return this.native.slice(number, this.native.length);
-      },
       each: function each(){
         return this.native.forEach.apply(this.native, arguments);
       },
@@ -167,9 +164,6 @@
       $splice: function $splice(){
         return this.native.splice.apply(this.native, arguments);
       },
-      take: function take(number){
-        return this.native.slice(0, number);
-      },
       times: function times(integer){
         var res = []
         for(var i = 0; i < integer; i++){
@@ -187,6 +181,14 @@
       },
       $unshift: function $unshift(){
         return this.native.unshift.apply(this.native, arguments);
+      },
+      withoutFirst: function withoutFirst(number){
+        if(arguments.length === 0){ number = 1; }
+        return this.native.slice(number, this.native.length);
+      },
+      withoutLast: function withoutLast(number){
+        if(arguments.length === 0){ number = 1; }
+        return this.native.slice(0, this.native.length - number);
       },
       zip: function zip(){
         var others = Array.prototype.slice.call(arguments);

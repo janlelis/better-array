@@ -153,15 +153,23 @@ describe('BetterArray', function() {
     });
   });
 
-  describe('.take', function() {
-    it("returns the first N values", function() {
-      expect( ba([2, 3, 4]).take(2) ).toEqual([2, 3]);
+  describe('.withoutFirst', function(number) {
+    it("returns the all of the arrays values, except the first N", function() {
+      expect( ba([2, 3, 4]).withoutFirst(2) ).toEqual([4]);
+    });
+
+    it("assumes count of 1 when no argument given", function() {
+      expect( ba([2, 3, 4]).withoutFirst() ).toEqual([3, 4]);
     });
   });
 
-  describe('.drop', function() {
-    it("returns the all of the arrays values, except the first N", function() {
-      expect( ba([2, 3, 4]).drop(2) ).toEqual([4]);
+  describe('.withoutLast', function(number) {
+    it("returns the all of the arrays values, except the last N", function() {
+      expect( ba([2, 3, 4]).withoutLast(2) ).toEqual([2]);
+    });
+
+    it("assumes count of 1 when no argument given", function() {
+      expect( ba([2, 3, 4]).withoutLast() ).toEqual([2, 3]);
     });
   });
 
