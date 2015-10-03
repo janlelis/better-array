@@ -26,7 +26,7 @@ Or the `count` method:
 a.count('b'); // => 2
 ```
 
-See below for more examples. Please note that the resulting objects are always vanilla JS objects, not BetterArray wrapper objects. This is intentional; the main goal of this library is not the ability to chain, but to be very unobtrusive. If you still want to chain method calls, see at bottom for two options to do so.
+Please note that the resulting objects are always vanilla JS objects, not BetterArray wrapper objects. This is intentional; the main goal of this library is not the ability to chain, but to be very unobtrusive. If you still want to chain method calls, see at bottom for two options to do so.
 
 ## Install
 
@@ -36,32 +36,55 @@ Use the script file directly (via `BetterArray` browser global), or get it from 
 
 ## API
 
-All methods that begin with `$` mutate the original array, all the othen ones don't.
+All methods that begin with `$` mutate the original array, the other ones don't.
 
 Method | Description
 -------|------------
 `.and(array)` | Returns the intersection: Keep only values which can be found in both arrays
-`.at(index)` | Returns value at this index
-`.at(*indexes)` | Returns an array with the values at these indexes
+`.at(index)` | Returns value at this index. Returns an array with the values when given multiple arguments
+`.$clear` | Deletes all content from the array and returns the emptied array
 `.clone()` | Returns a new array object referencing the same values
 `.compact()` | Returns array with all `null` and `undefined` values removed. Note that this is different from underscore's version, which removes all *falsy* values.
-`.count()` | Returns number of elements. If parameter given, returns how often this object appears(using `===`)
-`.count(object)` | Returns how often this object appears in the array (using `===`)
+`.contains()` | Returns boolean that indicates if the element is part of the array
+`.count()` | Returns number of elements. If argument given, returns how often this object appears(using `===`)
+`.$delete(index)` | Remove the element at the given index. Can take multiple arguments.
+`.doesEvery()` | See [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+`.doesSome()` | See [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+`.doesNone()` | Returns true if none of the elements returns a true value for the test function
+`.each()` | See [Array.prototype.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+`.filter()` | See [Array.prototype.filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 `.first()` | Returns the first element
+`.grep()` | ...
 `.first(integer)` | Returns an array of the first N elements
 `.grep(matcher)` | Returns a filtered array by calling `matcher.test()` on every element, so you can use it to filter an array of strings using a regex
-`.contains()` | Returns boolean that indicates if the element is part of the array
+`.indexOf()` | See [Array.prototype.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+`.$insert(index, value)` | Inserts an new element at this position
 `.isEmpty()` | Returns `true` if the array is empty
-`.last()` | Returns the last element
-`.last(integer)` | Returns an array of the last N elements
+`.last()` | Returns the last element. Returns an array of the last N elements if an integer argument given
+`.lastIndexOf()` | See [Array.prototype.lastIndexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+`.map()` | See [Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 `.minus(array)` | Returns an array with unique values and all elements of the other array removed
 `.or(array)` | Returns a unique array out of all elements of both arrays
 `.plus(array)` | Returns a concatenated array
+`.$pop()` | See [Array.prototype.pop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+`.$push()` | See [Array.prototype.push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+`.reduce()` | See [Array.prototype.reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+`.reduceRight()` | See [Array.prototype.reduceRight](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
+`.reverse()` | Returns the reversed array
+`.$reverse()` | See [Array.prototype.reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+`.rotate()` | Returns an array with the first element(s) put at the end
+`.$set(index, value)` | Sets the value at the given index
 `.size()` | Returns the array length
+`.$shift()` | See [Array.prototype.shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+`.slice()` | See [Array.prototype.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 `.sliceLength(index, length)` | Returns an array slice, but second parameter determines length instead of end position
+`.sort()` | Returns the array with all elements sorted
+`.$sort()` | See [Array.prototype.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+`.$splice()` | See [Array.prototype.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 `.times(integer)` | Repeats the array N times
 `.toArray()` | Returns the underlying array
 `.unique()` | Returns array with no double entries
+`.$unshift()` | See [Array.prototype.unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
 `.withoutFirst(number)` | Returns an array without the first N elements
 `.withoutLast(number)` | Returns an array without the last N elements
 `.zip(*arrays)` | Returns the transposed array
