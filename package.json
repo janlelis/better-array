@@ -1,7 +1,7 @@
 {
   "name": "better-array",
-  "version": "0.2.0",
-  "description": "Adds some Ruby-inspired features to arrays when you need it. It is like an underscore.js only for arrays.",
+  "version": "0.3.0",
+  "description": "A better API for arrays that you can activate whenever you like. It is a little like an underscore.js, but only for arrays. Inspired by Ruby's core library, but closer to JavaScript's.",
   "homepage": "https://github.com/janlelis/better-array",
   "repository": {
     "type": "git",

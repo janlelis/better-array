@@ -1,7 +1,7 @@
 {
   "name": "better-array",
   "main": "better-array.js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/janlelis/better-array",
   "authors": [
     "Jan Lelis <mail@janlelis.de>"
@@ -19,7 +19,6 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "spec"
   ]
 }
