@@ -1,0 +1,25 @@
+{
+  "name": "better-array",
+  "main": "better-array.js",
+  "version": "0.2.0",
+  "homepage": "https://github.com/janlelis/better-array",
+  "authors": [
+    "Jan Lelis <mail@janlelis.de>"
+  ],
+  "description": "A better API for arrays that you can activate whenever you like. It is a little like an underscore.js, but only for arrays. Inspired by Ruby's core library, but closer to JavaScript's.",
+  "keywords": [
+    "array",
+    "enumerable",
+    "operators",
+    "ruby",
+    "utils"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
