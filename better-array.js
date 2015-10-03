@@ -40,6 +40,9 @@
           return e != null;
         });
       },
+      contains: function contains(element){
+        return this.native.indexOf(element) >= 0;
+      },
       count: function count(object){
         if(arguments.length === 0){
           return this.native.length;
@@ -80,9 +83,6 @@
         return this.native.filter(function(e){
           return matcher.test(e)
         });
-      },
-      contains: function contains(element){
-        return this.native.indexOf(element) >= 0;
       },
       indexOf: function indexOf(){
         return this.native.indexOf.apply(this.native, arguments);
