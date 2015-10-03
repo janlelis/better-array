@@ -48,46 +48,50 @@ Method | Description
 `.contains()` | Returns boolean that indicates if the element is part of the array
 `.count()` | Returns number of elements. If argument given, returns how often this object appears(using `===`)
 `.$delete(index)` | Remove the element at the given index. Can take multiple arguments.
-`.doesEvery()` | See [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
-`.doesSome()` | See [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+`.doesEvery()` | [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+`.doesSome()` | [Array.prototype.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 `.doesNone()` | Returns true if none of the elements returns a true value for the test function
-`.each()` | See [Array.prototype.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-`.filter()` | See [Array.prototype.filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+`.each()` | [Array.prototype.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+`.filter()` | [Array.prototype.filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 `.first()` | Returns the first element
-`.grep()` | ...
+`.grep()` | Returns an array of elements matching the (regex) test 
 `.first(integer)` | Returns an array of the first N elements
 `.grep(matcher)` | Returns a filtered array by calling `matcher.test()` on every element, so you can use it to filter an array of strings using a regex
-`.indexOf()` | See [Array.prototype.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+`.indexOf()` | [Array.prototype.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
 `.$insert(index, value)` | Inserts an new element at this position
 `.isEmpty()` | Returns `true` if the array is empty
 `.last()` | Returns the last element. Returns an array of the last N elements if an integer argument given
-`.lastIndexOf()` | See [Array.prototype.lastIndexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
-`.map()` | See [Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+`.lastIndexOf()` | [Array.prototype.lastIndexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+`.map()` | [Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 `.minus(array)` | Returns an array with unique values and all elements of the other array removed
 `.or(array)` | Returns a unique array out of all elements of both arrays
 `.plus(array)` | Returns a concatenated array
-`.$pop()` | See [Array.prototype.pop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
-`.$push()` | See [Array.prototype.push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
-`.reduce()` | See [Array.prototype.reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
-`.reduceRight()` | See [Array.prototype.reduceRight](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
+`.$pop()` | [Array.prototype.pop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+`.$push()` | [Array.prototype.push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+`.reduce()` | [Array.prototype.reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+`.reduceRight()` | [Array.prototype.reduceRight](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
 `.reverse()` | Returns the reversed array
-`.$reverse()` | See [Array.prototype.reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+`.$reverse()` | [Array.prototype.reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 `.rotate()` | Returns an array with the first element(s) put at the end
 `.$set(index, value)` | Sets the value at the given index
 `.size()` | Returns the array length
-`.$shift()` | See [Array.prototype.shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
-`.slice()` | See [Array.prototype.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+`.$shift()` | [Array.prototype.shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+`.slice()` | [Array.prototype.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 `.sliceLength(index, length)` | Returns an array slice, but second parameter determines length instead of end position
 `.sort()` | Returns the array with all elements sorted
-`.$sort()` | See [Array.prototype.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-`.$splice()` | See [Array.prototype.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+`.$sort()` | [Array.prototype.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+`.$splice()` | [Array.prototype.splice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 `.times(integer)` | Repeats the array N times
 `.toArray()` | Returns the underlying array
 `.unique()` | Returns array with no double entries
-`.$unshift()` | See [Array.prototype.unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+`.$unshift()` | [Array.prototype.unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
 `.withoutFirst(number)` | Returns an array without the first N elements
 `.withoutLast(number)` | Returns an array without the last N elements
 `.zip(*arrays)` | Returns the transposed array
+
+## Examples
+
+See [better_array_spec](https://github.com/janlelis/better-array/blob/master/spec/better_array_spec.js) for more examples!
 
 ## Chaining
 
@@ -96,7 +100,7 @@ If you really want to chain, you can use one these options:
 ### Using `BetterArray.chain` (more magic)
 
 ```javascript
-BetterArray.chain([2,null, 3,4]).reverse().compact().toArray() // => [4, 3, 2]
+BetterArray.chain([2, null, 3, 4]).reverse().compact().toArray() // => [4, 3, 2]
 ```
 
 ### Extending the `Array.prototype` yourself (more explicit)
@@ -110,7 +114,7 @@ Array.prototype.betterArray = function betterArray(){
 Use it like this:
 
 ```javascript
-BetterArray([2,null, 3,4]).reverse().betterArray().compact() // => [4, 3, 2]
+BetterArray([2, null, 3, 4]).reverse().betterArray().compact() // => [4, 3, 2]
 ```
 
 ## Wish List
