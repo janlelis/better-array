@@ -8,10 +8,10 @@ A better API for arrays that you can activate whenever you like. It is a little 
 var BetterArray = require('better-array'); // if node/commonjs
 ```
 
-You feed your arrays that you want to do more fancy stuff with into the `BetterArray` function:
+You feed your arrays into the `BetterArray()` function:
 
 ```javascript
-var a = BetterArray([3, 'b', 4, null, 5, "b", 0]);
+var a = BetterArray([3, "b", 4, null, 5, "b", 0]);
 ```
 
 Now, `a` is a BetterArray object and has access to all the wonderful methods below. For example, `compact`, which removes all `null` and `undefined` elements:
@@ -26,23 +26,27 @@ Or the `count` method:
 a.count('b'); // => 2
 ```
 
-Please note that the resulting objects are always vanilla JS objects, not BetterArray wrapper objects. This is intentional; the main goal of this library is not the ability to chain, but to be very unobtrusive. If you still want to chain method calls, see at bottom for two options to do so.
+Please note that the resulting objects are always vanilla JS objects, not BetterArray wrapper objects. This is intentional; the main goal of this library is not the ability to chain, but to be very unobtrusive.
 
 ## Install
 
-Use the script file directly (via `BetterArray` browser global), or get it from npm:
+Use the script file directly (via the `BetterArray` browser global), or get it from npm:
 
     $ npm install better-array
 
+## Examples
+
+See [better_array_spec](https://github.com/janlelis/better-array/blob/master/spec/better_array_spec.js) for more examples!
+
 ## API
 
-All methods that begin with `$` mutate the original array, the other ones don't.
+All methods that begin with `$` mutate the original array, the others don't.
 
 Method | Description
 -------|------------
 `.and(array)` | Returns the intersection: Keep only values which can be found in both arrays
 `.at(index)` | Returns value at this index. Returns an array with the values when given multiple arguments
-`.$clear` | Deletes all content from the array and returns the emptied array
+`.$clear()` | Deletes all content from the array and returns the emptied array
 `.clone()` | Returns a new array object referencing the same values
 `.compact()` | Returns array with all `null` and `undefined` values removed. Note that this is different from underscore's version, which removes all *falsy* values.
 `.contains()` | Returns boolean that indicates if the element is part of the array
@@ -89,13 +93,9 @@ Method | Description
 `.withoutLast(number)` | Returns an array without the last N elements
 `.zip(*arrays)` | Returns the transposed array
 
-## Examples
-
-See [better_array_spec](https://github.com/janlelis/better-array/blob/master/spec/better_array_spec.js) for more examples!
-
 ## Chaining
 
-If you really want to chain, you can use one these options:
+You have two options to chain together multiple better array functions:
 
 ### Using `BetterArray.chain` (more magic)
 
