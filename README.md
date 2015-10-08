@@ -22,6 +22,12 @@ a.compact(); // => [3, 'b', 4, 5, "b", 0]
 
 Please note that the resulting objects are always vanilla JS objects, not BetterArray wrapper objects. This is intentional; the main goal of this library is not the ability to chain, but to be very unobtrusive.
 
+## Design Goals
+
+* Good API over performance
+* Delegate to native functions whenever possible
+* Don't extend `Array.prototype`
+
 ## Install
 
 Use the script file directly (via the `BetterArray` browser global), or get it from npm:
