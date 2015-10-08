@@ -146,7 +146,7 @@ Array.prototype.betterArray = function betterArray(){
 Use it like this:
 
 ```javascript
-BetterArray([2, null, 3, 4]).reverse().betterArray().compact() // => [4, 3, 2]
+[2, null, 3, 4].reverse().betterArray().compact() // => [4, 3, 2]
 ```
 
 ## Wish List
