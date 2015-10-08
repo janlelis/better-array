@@ -20,12 +20,6 @@ Now, `a` is a BetterArray object and has access to all the wonderful methods bel
 a.compact(); // => [3, 'b', 4, 5, "b", 0]
 ```
 
-Or the `count` method:
-
-```javascript
-a.count('b'); // => 2
-```
-
 Please note that the resulting objects are always vanilla JS objects, not BetterArray wrapper objects. This is intentional; the main goal of this library is not the ability to chain, but to be very unobtrusive.
 
 ## Install
@@ -35,6 +29,38 @@ Use the script file directly (via the `BetterArray` browser global), or get it f
     $ npm install better-array
 
 ## Examples
+
+```javascript
+$ node
+> ba = require('better-array')
+> array = ba([2, 3, 4, 4, 5])
+> array.first()
+2
+> array.last()
+5
+> array.last(3)
+[ 4, 4, 5 ]
+> array.minus([3, 4])
+[ 2, 5 ]
+> array.or([4, 5, 6])
+[ 2, 3, 4, 5, 6 ]
+> array.unique()
+[ 2, 3, 4, 5 ]
+> array.count(4)
+2
+> array.contains(9)
+false
+> array.isEmpty()
+false
+> array.doesSome(function(e){ return e % 2 == 0 })
+true
+> array.doesEvery(function(e){ return e % 2 == 0 })
+false
+> array.doesNone(function(e){ return e % 2 == 0 })
+false
+> array.$insert(2, "new element");
+// array is now [2, 3, 'new element',  4,  4, 5 ]
+```
 
 See [better_array_spec](https://github.com/janlelis/better-array/blob/master/spec/better_array_spec.js) for more examples!
 
