@@ -170,6 +170,17 @@ Not implemented, yet:
 * max
 * minmax
 
+## Alternatives & Similar Libraries
+
+Don't like better-array's different approach? Try one of these:
+
+* http://underscorejs.org
+* https://lodash.com
+* http://sugarjs.com
+* http://rubyjs.org
+* http://stringjs.com
+* http://matthewmueller.github.io/array/
+
 ## MIT License
 
 Copyright (C) 2015 Jan Lelis <http://janlelis.com>. Released under the MIT license.
