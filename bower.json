@@ -1,7 +1,7 @@
 {
   "name": "better-array",
   "main": "better-array.js",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/janlelis/better-array",
   "authors": [
     "Jan Lelis <mail@janlelis.de>"
