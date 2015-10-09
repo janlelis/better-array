@@ -89,6 +89,7 @@
       },
       $insert: function $insert(index, element){
         this.native.splice(index, 0, element);
+        return this.native;
       },
       isEmpty: function isEmpty(){
         return this.native.length === 0;

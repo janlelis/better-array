@@ -20,7 +20,7 @@ describe('BetterArray', function() {
       expect( ba([2, 3, 4]).at(1) ).toEqual(3);
     });
 
-    it("returns values at that indexes for multiple argument", function() {
+    it("returns values at that indexes for multiple arguments", function() {
       expect( ba([2, 3, 4]).at(0, 2) ).toEqual([2, 4]);
     });
   });
@@ -30,6 +30,11 @@ describe('BetterArray', function() {
       var array = [2, 3, 4];
       ba(array).$clear();
       expect( array ).toEqual([]);
+    });
+
+    it("returns the empty array", function(){
+      var array = [2, 3, 4];
+      expect( ba(array).$clear() ).toEqual([]);
     });
   });
 
@@ -52,7 +57,7 @@ describe('BetterArray', function() {
   });
 
   describe('.contains', function() {
-    it("returns array with no double entries", function() {
+    it("checks if an element is included in the array", function() {
       expect( ba([2, 3, 4]).contains(4) ).toEqual(true);
       expect( ba([2, 3, 4]).contains(5) ).toEqual(false);
     });
@@ -155,6 +160,11 @@ describe('BetterArray', function() {
       ba(array).$insert(1, 2.5);
       expect( array ).toEqual([2, 2.5, 3, 4]);
     });
+
+    it("returns the updated array", function() {
+      var array = [2, 3, 4];
+      expect( ba(array).$insert(1, 2.5) ).toEqual([2, 2.5, 3, 4]);
+    });
   });
 
   describe('.isEmpty', function() {
@@ -193,13 +203,13 @@ describe('BetterArray', function() {
 
   describe('.minus', function() {
     it("takes values from array without the ones from the other array", function() {
-      expect( ba([2, 3, 4]).minus([3, 4, 5]) ).toEqual([2]);
+      expect( ba([2, 3, 4] ).minus([3, 4, 5]) ).toEqual([2]);
     });
   });
 
   describe('.or', function() {
     it("returns a uniqe array out of all elements of both arrays", function() {
-      expect( ba([2, 3, 4]).or([3, 4, 4, 5]) ).toEqual([2, 3, 4, 5]);
+      expect( ba([2, 3, 4] ).or([3, 4, 4, 5]) ).toEqual([2, 3, 4, 5]);
     });
   });
 
@@ -285,17 +295,19 @@ describe('BetterArray', function() {
     });
 
     it("rotates by 1 without argument", function() {
-      expect( ba([2, 3, 4, 5, 6]).rotate(1) ).toEqual([3, 4, 5, 6, 2]);
+      expect( ba([2, 3, 4, 5, 6]).rotate() ).toEqual([3, 4, 5, 6, 2]);
     });
   });
 
   describe('.$set', function() {
     it("sets the element at this index and returns array", function() {
-      expect( ba([2, 3, 4]).$set(1, "three") ).toEqual([2, "three", 4]);
+      var array = [2, 3, 4];
+      ba(array).$set(1, "three")
+      expect( array ).toEqual([2, "three", 4]);
     });
 
-    it("returns values at that indexes for multiple argument", function() {
-      expect( ba([2, 3, 4]).at(0, 2) ).toEqual([2, 4]);
+    it("returns updated array", function() {
+      expect( ba([2, 3, 4]).$set(1, "three") ).toEqual([2, "three", 4]);
     });
   });
 

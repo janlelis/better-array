@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.1
+
+* $insert returns updated array
+
 ## v0.3.0
 
 * Lots of new methods
