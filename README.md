@@ -132,7 +132,7 @@ You have two options to chain together multiple better array functions:
 ### Using `BetterArray.chain` (more magic)
 
 ```javascript
-BetterArray.chain([2, null, 3, 4]).reverse().compact().toArray() // => [4, 3, 2]
+BetterArray.chain([2, null, 3, 4]).withoutLast().compact().toArray() // => [2, 3]
 ```
 
 ### Extending the `Array.prototype` yourself (more explicit)
@@ -146,7 +146,7 @@ Array.prototype.betterArray = function betterArray(){
 Use it like this:
 
 ```javascript
-BetterArray([2, null, 3, 4]).reverse().betterArray().compact() // => [4, 3, 2]
+BetterArray([2, null, 3, 4]).withoutLast().betterArray().compact() // => [2, 3]
 ```
 
 ## Wish List
