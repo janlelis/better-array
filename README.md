@@ -1,4 +1,4 @@
-# BetterArray for JavaScript [![[npm]](https://img.shields.io/npm/v/better-array.svg)](https://www.npmjs.com/package/better-array)
+# BetterArray for JavaScript [![[npm]](https://img.shields.io/npm/v/better-array.svg)](https://www.npmjs.com/package/better-array) [![[travis]](https://travis-ci.org/janlelis/better-array.png)](https://travis-ci.org/janlelis/better-array)
 
 A better API for arrays that you can activate whenever you like. It is a little like an underscore.js, but only for arrays. Inspired by Ruby's core library, but closer to JavaScript's.
 
