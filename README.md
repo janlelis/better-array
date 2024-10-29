@@ -1,6 +1,8 @@
-# BetterArray for JavaScript [![[npm]](https://img.shields.io/npm/v/better-array.svg)](https://www.npmjs.com/package/better-array) [![[travis]](https://travis-ci.org/janlelis/better-array.png)](https://travis-ci.org/janlelis/better-array)
+# BetterArray for JavaScript
 
 A better API for arrays that you can activate whenever you like. It is a little like an underscore.js, but only for arrays. Inspired by Ruby's core library, but closer to JavaScript's.
+
+**Discontinued:**: This project was great to learn more about arrays in JavaScript coming from Ruby. You are encouraged to check [the source](https://github.com/janlelis/better-array/blob/master/better-array.js) to learn about the implementation of each method.
 
 ## How it Works
 
@@ -176,17 +178,6 @@ Not implemented, yet:
 * max
 * minmax
 
-## Alternatives & Similar Libraries
-
-Don't like better-array's different approach? Try one of these:
-
-* http://underscorejs.org
-* https://lodash.com
-* http://sugarjs.com
-* http://rubyjs.org
-* http://stringjs.com
-* http://matthewmueller.github.io/array/
-
 ## MIT License
 
-Copyright (C) 2015 Jan Lelis <http://janlelis.com>. Released under the MIT license.
+Copyright (C) 2015 Jan Lelis. Released under the MIT license.
